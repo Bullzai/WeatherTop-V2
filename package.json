@@ -1,7 +1,7 @@
 {
-  "name": "playlist-1",
+  "name": "WeatherTop-V2",
   "version": "0.0.1",
-  "description": "Playist 1 Features",
+  "description": "WeatherTop V2 - JavaScript edition",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -19,7 +19,7 @@
     "winston": "^3.3.3"
   },
   "repository": {
-    "url": "https://github.com/wit-hdip-comp-sci-2021/playlist-1"
+    "url": "https://github.com/Bullzai/WeatherTop-V2"
   },
   "license": "MIT",
   "keywords": [
