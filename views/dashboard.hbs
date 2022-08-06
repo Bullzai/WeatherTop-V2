@@ -1,29 +1,58 @@
 {{> menu id="dashboard"}}
 
-{{#each playlists}}
+{{!-- {{#each stations}}
   <section class="ui segment">
     <h2 class="ui header">
-      {{title}}
+      {{name}}
     </h2>
+    {{> liststations stations}}
     <table class="ui table">
       <thead>
         <tr>
-          <th>Song</th>
-          <th>Artist</th>
+          <th>Code</th>
+          <th>Wind Speed</th>
         </tr>
       </thead>
       <tbody>
-        {{#each songs}}
+        {{#each readings}}
           <tr>
             <td>
-              {{title}}
+              {{code}}
             </td>
             <td>
-              {{artist}}
+              {{windSpeed}}
             </td>
           </tr>
         {{/each}}
       </tbody>
     </table>
   </section>
+{{/each}} --}}
+
+{{#each stations}}
+{{!-- #{list items:stations, as:'station'} --}}
+<section class="ui segment">
+  {{> latestweather}}
+  {{!-- #{latestweather station:station /} --}}
+  <a href="/station/{{id}}">
+    <div class="ui animated fade button" tabindex="0">
+      <div class="visible content">
+        <i class="teal folder open icon"></i>
+      </div>
+      <div class="hidden content">
+        View
+      </div>
+    </div>
+  </a>
+  <a href="/dashboard/deletestation/{{id}}">
+    <div class="ui animated fade button" tabindex="0">
+      <div class="visible content">
+        <i class="brown trash icon"></i>
+      </div>
+      <div class="hidden content">
+        Delete
+      </div>
+    </div>
+  </a>
+</section>
 {{/each}}

@@ -1,0 +1,60 @@
+{
+  "stationCollection": [
+    {
+      "id": "01",
+      "name": "Tramore",
+      "latitude": 52.1623500,
+      "longitude": -7.1524400,
+      "readings": [
+        {
+          "id": "02",
+          "code": 800,
+          "temperature": 0.5,
+          "windSpeed": 3.5,
+          "pressure": 1002,
+          "date": "2021-04-25T07:20:42.138Z"
+        },
+        {
+          "id": "03",
+          "code": 600,
+          "temperature": 6,
+          "windSpeed": 2,
+          "pressure": 1004,
+          "date": "2021-05-25T07:20:42.138Z"
+        },
+        {
+          "id": "04",
+          "code": 700,
+          "temperature": 8,
+          "windSpeed": 1,
+          "pressure": 1005,
+          "date": "2021-06-25T07:20:42.138Z"
+        }
+      ]
+    },
+    {
+      "id": "05",
+      "name": "Dunmore",
+      "latitude": 52.1499994,
+      "longitude": -6.9833294,
+      "readings": [
+        {
+          "id": "06",
+          "code": 700,
+          "temperature": 8,
+          "windSpeed": 1,
+          "pressure": 999,
+          "date": "2021-02-25T07:20:42.138Z"
+        },
+        {
+          "id": "07",
+          "code": 200,
+          "temperature": 0.5,
+          "windSpeed": 3.5,
+          "pressure": 1000,
+          "date": "2021-03-25T07:20:42.138Z"
+        }
+      ]
+    }
+  ]
+}
