@@ -1,18 +1,22 @@
 "use strict";
 
 const logger = require("../utils/logger");
-const stationCollection = require("../models/station-store.js");
-const stationUtil = require("../utils/stationUtil");
+const stationStore = require("../models/station-store");
+const stationUtil = require("../utils/station-analytics");
 
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
     const viewData = {
       title: "Stations Dashboard",
-      stations: stationCollection
+      stations: stationStore.getAllStations(),
+      // stationSummary : {
+      //   shortestSong : playlistAnalytics.getFahrenheit(playlist)
+      // }
     };
-    logger.info("about to render", stationCollection);
-    console.log(`about rendering --- ${stationUtil.ppr()}`);
+    logger.info("about to render", stationStore);
+    // console.log(`about rendering --- ${stationStore.getLatestReading()}`);
+    // console.log(`about rendering --- ${stationUtil.temperature()}`);
 
     response.render("dashboard", viewData);
   }

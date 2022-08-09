@@ -3,11 +3,9 @@
     <div class="blue column">
       <div class="ui equal width grid">
         <div class="left floated left aligned column">
-          {{!-- <h3>${_station.name}</h3> --}}
-          <h3>{{name}}</h3>
-          Lat: {{latitude}}<br>
-          Lng: {{longitude}}<br>
-          {{!-- Lng: ${utils.StationUtil.roundedLongitude(_station)}<br> --}}
+          <h3>{{station.name}}</h3>
+          Lat: {{station.latitude}}<br>
+          Lng: {{station.longitude}}<br>
         </div>
         <div class="right floated center aligned column">
           <i class="teal marker huge icon"></i>
@@ -18,14 +16,10 @@
       <div class="ui equal width grid">
         <div class="left floated left aligned column">
           <h3>Weather</h3>
-          {{StationUtil}}
-          {{!-- #{if _station.readings}
-            ${utils.StationUtil.weather(_station)[0]}<br>
-            ${utils.StationUtil.beaufortLabel(utils.StationUtil.beaufort(_station))}
-          #{/if} --}}
+          {{stationSummary.weather.[0]}}<br>
         </div>
         <div class="right floated center aligned column">
-          <i class="olive ${utils.StationUtil.weather(_station)[1]} huge icon"></i>
+          <i class="olive {{stationSummary.weather.[1]}} huge icon"></i>
         </div>
       </div>
     </div>
@@ -33,14 +27,10 @@
       <div class="ui equal width grid">
         <div class="left floated left aligned column">
           <h3>Temperature</h3>
-          {{#each readings}}
-          {{temperature}}
-          {{/each}}
-          #{if _station.readings}
-            ${utils.StationUtil.temperature(_station)} °C<br>
-            ${utils.StationUtil.fahrenheit(_station)} °F<br>
-            ${utils.StationUtil.minMax('temperature', _station)}
-          #{/if}
+          {{stationSummary.temperature}} °C<br>
+          {{stationSummary.fahrenheit}} °F<br>
+          {{stationSummary.minTemp}}
+            {{!-- ${utils.StationUtil.minMax('temperature', _station)} --}}
         </div>
         <div class="right floated center aligned column">
           <i class="teal temperature low huge icon"></i><br><br>
@@ -52,12 +42,11 @@
       <div class="ui equal width grid">
         <div class="left floated left aligned column">
           <h3>Wind</h3>
-          #{if _station.readings}
-            ${utils.StationUtil.beaufort(_station)} bft<br>
-            ${utils.StationUtil.direction(_station)}<br>
-            Feels like: ${utils.StationUtil.feelsLike(_station)} °C<br>
-            ${utils.StationUtil.minMax('windSpeed', _station)}
-          #{/if}
+            {{stationSummary.beaufort}} bft<br>
+            {{stationSummary.direction}}<br>
+            Feels like: {{stationSummary.feelsLike}} °C<br>
+            {{stationSummary.minMaxTemp}}
+            {{!-- ${utils.StationUtil.minMax('windSpeed', _station)} --}}
         </div>
         <div class="right floated center aligned column">
           <i class="olive wind huge icon"></i><br><br>
@@ -69,10 +58,8 @@
       <div class="ui equal width grid">
         <div class="left floated left aligned column">
           <h3>Pressure</h3>
-          #{if _station.readings}
-            ${utils.StationUtil.pressure(_station)} hPa<br>
-            ${utils.StationUtil.minMax('pressure', _station)}
-          #{/if}
+            {{stationSummary.pressure}} hPa<br>
+            {{!-- ${utils.StationUtil.minMax('pressure', _station)} --}}
         </div>
         <div class="right floated center aligned column">
           <i class="right teal huge sun outline loading icon"></i><br><br>

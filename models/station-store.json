@@ -3,6 +3,7 @@
     {
       "id": "01",
       "name": "Tramore",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0", 
       "latitude": 52.1623500,
       "longitude": -7.1524400,
       "readings": [
@@ -12,6 +13,7 @@
           "temperature": 0.5,
           "windSpeed": 3.5,
           "pressure": 1002,
+          "windDirection": 90,
           "date": "2021-04-25T07:20:42.138Z"
         },
         {
@@ -20,6 +22,7 @@
           "temperature": 6,
           "windSpeed": 2,
           "pressure": 1004,
+          "windDirection": 96,
           "date": "2021-05-25T07:20:42.138Z"
         },
         {
@@ -28,6 +31,7 @@
           "temperature": 8,
           "windSpeed": 1,
           "pressure": 1005,
+          "windDirection": 101,
           "date": "2021-06-25T07:20:42.138Z"
         }
       ]
@@ -35,6 +39,7 @@
     {
       "id": "05",
       "name": "Dunmore",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0", 
       "latitude": 52.1499994,
       "longitude": -6.9833294,
       "readings": [
@@ -44,6 +49,7 @@
           "temperature": 8,
           "windSpeed": 1,
           "pressure": 999,
+          "windDirection": 98,
           "date": "2021-02-25T07:20:42.138Z"
         },
         {
@@ -52,6 +58,7 @@
           "temperature": 0.5,
           "windSpeed": 3.5,
           "pressure": 1000,
+          "windDirection": 102,
           "date": "2021-03-25T07:20:42.138Z"
         }
       ]
