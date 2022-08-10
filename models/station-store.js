@@ -17,7 +17,7 @@ const stationStore = {
     return this.store.findOneBy(this.collection, { id: id });
   },
 
-  getUserPlaylists(userid) {
+  getUserStations(userid) {
     return this.store.findBy(this.collection, { userid: userid });
   },
 

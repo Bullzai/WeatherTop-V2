@@ -1,8 +1,19 @@
 <nav class="ui menu">
-  <header class="ui header item"> Stations </header>
+  <header class="ui header item"><a href="/"> WeatherTop </a></header>
+  <div class="item">
+    #{get 'title' /}
+  </div>
   <div class="right menu">
-    <a id="dashboard" class="item" href="/dashboard"> Dashboard  </a>
-    <a id="about" class="item" href="/about"> About </a>
+    <a id="dashboard" class="item" href="/dashboard"><i class="tachometer alternate icon"></i> Dashboard </a>
+    <a id="about" class="item" href="/about"><i class="info icon"></i> About </a>
+    <div class="ui simple dropdown item">
+      <i class="blue user icon"></i>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <a id="profile" class="item" href="/profile"><i class="teal edit icon"></i> Edit Profile</a>
+        <a id="logout" class="item" href="/logout"><i class="teal sign out alternate icon"></i> Logout</a>
+      </div>
+    </div>
   </div>
 </nav>
 
