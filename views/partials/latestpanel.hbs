@@ -29,8 +29,8 @@
           <h3>Temperature</h3>
           {{stationSummary.temperature}} °C<br>
           {{stationSummary.fahrenheit}} °F<br>
-          {{stationSummary.minTemp}}
-            {{!-- ${utils.StationUtil.minMax('temperature', _station)} --}}
+          {{stationSummary.minTemp}}<br>
+          {{stationSummary.maxTemp}}
         </div>
         <div class="right floated center aligned column">
           <i class="teal temperature low huge icon"></i><br><br>
@@ -45,8 +45,8 @@
             {{stationSummary.beaufort}} bft<br>
             {{stationSummary.direction}}<br>
             Feels like: {{stationSummary.feelsLike}} °C<br>
-            {{stationSummary.minMaxTemp}}
-            {{!-- ${utils.StationUtil.minMax('windSpeed', _station)} --}}
+            {{stationSummary.minWindSpeed}}<br>
+            {{stationSummary.maxWindSpeed}}
         </div>
         <div class="right floated center aligned column">
           <i class="olive wind huge icon"></i><br><br>
@@ -59,7 +59,8 @@
         <div class="left floated left aligned column">
           <h3>Pressure</h3>
             {{stationSummary.pressure}} hPa<br>
-            {{!-- ${utils.StationUtil.minMax('pressure', _station)} --}}
+            {{stationSummary.minPressure}}<br>
+            {{stationSummary.maxPressure}}
         </div>
         <div class="right floated center aligned column">
           <i class="right teal huge sun outline loading icon"></i><br><br>

@@ -162,26 +162,68 @@ const stationAnalytics = {
     },
 
     getMin(property, station) {
+      let minValue = null;
       if (station.readings.length > 0) {
-        let field;
         switch (property) {
           case "temperature":
-            field = station.readings.temperature;
+            minValue = station.readings[0].temperature;
+            for (let i = 0; i < station.readings.length; i++) {
+              if (minValue > station.readings[i].temperature) {
+                minValue = station.readings[i].temperature;
+              }
+            }
             break;
           case "windSpeed":
-            field = readings.windSpeed;
+            minValue = station.readings[0].windSpeed;
+            for (let i = 0; i < station.readings.length; i++) {
+              if (minValue > station.readings[i].windSpeed) {
+                minValue = station.readings[i].windSpeed;
+              }
+            }
             break;
           case "pressure":
-            field = readings.pressure;
+            minValue = station.readings[0].pressure;
+            for (let i = 0; i < station.readings.length; i++) {
+              if (minValue > station.readings[i].pressure) {
+                minValue = station.readings[i].pressure;
+              }
+            }
             break;
         }
-        let minValue = station.readings[0].field;
-        for (let i = 0; station.readings.length; i++) {
-          if (minValue > station.readings[i].field) {
-            minValue = station.readings[i].field;
-          }
+        return "Min: " + minValue;
+      }
+    },
+
+    getMax(property, station) {
+      let maxValue = null;
+      if (station.readings.length > 0) {
+        switch (property) {
+          case "temperature":
+            maxValue = station.readings[0].temperature;
+            for (let i = 0; i < station.readings.length; i++) {
+              if (maxValue < station.readings[i].temperature) {
+                maxValue = station.readings[i].temperature;
+              }
+            }
+            break;
+          case "windSpeed":
+            maxValue = station.readings[0].windSpeed;
+            for (let i = 0; i < station.readings.length; i++) {
+              if (maxValue < station.readings[i].windSpeed) {
+                maxValue = station.readings[i].windSpeed;
+              }
+            }
+            break;
+          case "pressure":
+            maxValue = station.readings[0].pressure;
+            for (let i = 0; i < station.readings.length; i++) {
+              if (maxValue < station.readings[i].pressure) {
+                maxValue = station.readings[i].pressure;
+              }
+            }
+            break;
         }
-        return minValue;
+        return "Max: " + maxValue;
       }
     }
 
