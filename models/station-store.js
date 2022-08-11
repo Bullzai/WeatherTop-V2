@@ -8,6 +8,7 @@ const stationStore = {
     stationCollection: []
   }),
   collection: "stationCollection",
+  fahren: 0.12,
 
   getAllStations() {
     return this.store.findAll(this.collection);
@@ -63,17 +64,10 @@ const stationStore = {
     return readings[0];
   },
 
-//   getLatestReading(id) {
-//     const station = this.store.findOneBy(this.collection, { id: id });
-//     return readings[station.readings.size() - 1];
-//   },
-
-//   updateSong(song, updatedSong) {
-//     song.title = updatedSong.title;
-//     song.artist = updatedSong.artist;
-//     song.duration = updatedSong.duration;
-//     this.store.save();
-//   }
+  getLatestReading(id) {
+    const station = this.store.findOneBy(this.collection, { id: id });
+    return readings[station.readings.length - 1];
+  },
 };
 
 module.exports = stationStore;
