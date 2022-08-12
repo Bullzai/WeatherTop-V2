@@ -1,23 +1,21 @@
-// "use strict";
+"use strict";
 
 const stationAnalytics = {
     getTemperature(station) {
       if (station.readings.length > 0) {
         return station.readings[station.readings.length - 1].temperature;
       }
-      return 0;
     },
 
     getPressure(station) {
       if (station.readings.length) {
         return station.readings[station.readings.length - 1].pressure;
       }
-      return 0;
     },
 
     getFahrenheit(station) {
       if (station.readings.length > 0) {
-        cels = station.readings[station.readings.length - 1].temperature;
+        let cels = station.readings[station.readings.length - 1].temperature;
         return (cels * 9 / 5 + 32);
       }
     },
@@ -225,33 +223,7 @@ const stationAnalytics = {
         }
         return "Max: " + maxValue;
       }
-    },
-
-    getLatestPanels(stations) {
-      for (let i = 0; i < stations.length; i++) {
-        
-      }
-
-
-
-      const LP = {
-          temperature : stationAnalytics.getTemperature(stationStore.getStation(stationId)),
-          fahrenheit : stationAnalytics.getFahrenheit(stationStore.getStation(stationId)),
-          weather : stationAnalytics.getWeather(stationStore.getStation(stationId)),
-          beaufort : stationAnalytics.getBeaufort(stationStore.getStation(stationId)),
-          direction : stationAnalytics.getDirection(stationStore.getStation(stationId)),
-          pressure : stationAnalytics.getPressure(stationStore.getStation(stationId)),
-          feelsLike : stationAnalytics.getFeelsLike(stationStore.getStation(stationId)),
-          minTemp : stationAnalytics.getMin("temperature", stationStore.getStation(stationId)),
-          minWindSpeed : stationAnalytics.getMin("windSpeed", stationStore.getStation(stationId)),
-          minPressure : stationAnalytics.getMin("pressure", stationStore.getStation(stationId)),
-          maxTemp : stationAnalytics.getMax("temperature", stationStore.getStation(stationId)),
-          maxWindSpeed : stationAnalytics.getMax("windSpeed", stationStore.getStation(stationId)),
-          maxPressure : stationAnalytics.getMax("pressure", stationStore.getStation(stationId))
-      };
-        return LP;
     }
-
 };
 
 module.exports = stationAnalytics;

@@ -5,7 +5,6 @@ const logger = require("../utils/logger");
 const stationStore = require("../models/station-store");
 const stationAnalytics = require("../utils/station-analytics");
 const uuid = require("uuid");
-const { getCurrentUser } = require("./accounts");
 
 const dashboard = {
   index(request, response) {
@@ -33,9 +32,30 @@ const dashboard = {
       viewData.stations[i]["maxPressure"] = stationAnalytics.getMax("pressure", viewData.stations[i]);
     }
 
-    logger.info("about to render", stationStore);
-
     response.render("dashboard", viewData);
+  },
+
+  addStation(request, response) {
+    const loggedInUser = accounts.getCurrentUser(request);
+    const newStation = {
+      id: uuid.v1(),
+      userid: loggedInUser.id,
+      name: request.body.name,
+      longitude: request.body.longitude,
+      latitude: request.body.latitude,
+      readings: [],
+      weather: []
+    };
+    logger.debug("Creating a new Sation", newStation);
+    stationStore.addStation(newStation);
+    response.redirect("/dashboard");
+  },
+
+  deleteStation(request, response) {
+    const stationId = request.params.id;
+    logger.debug(`Deleting Station ${stationId}`);
+    stationStore.removeStation(stationId);
+    response.redirect("/dashboard");
   }
 };
 

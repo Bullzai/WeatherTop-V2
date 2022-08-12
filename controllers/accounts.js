@@ -5,13 +5,6 @@ const logger = require("../utils/logger");
 const uuid = require("uuid");
 
 const accounts = {
-//   index(request, response) {
-//     const viewData = {
-//       title: "Login or Signup"
-//     };
-//     response.render("index", viewData);
-//   },
-
   login(request, response) {
     const viewData = {
       title: "Login to the Service"

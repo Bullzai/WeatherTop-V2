@@ -4,54 +4,56 @@ const logger = require("../utils/logger");
 const stationStore = require("../models/station-store");
 const stationAnalytics = require("../utils/station-analytics");
 const uuid = require("uuid");
-const { getBeaufort } = require("../utils/station-analytics");
 
 const station = {
   index(request, response) {
     const stationId = request.params.id;
-    logger.debug("station id = ", stationId);
     const viewData = {
       title: "station",
       station: stationStore.getStation(stationId),
-      stationSummary : {
-        temperature : stationAnalytics.getTemperature(stationStore.getStation(stationId)),
-        fahrenheit : stationAnalytics.getFahrenheit(stationStore.getStation(stationId)),
-        weather : stationAnalytics.getWeather(stationStore.getStation(stationId)),
-        beaufort : stationAnalytics.getBeaufort(stationStore.getStation(stationId)),
-        direction : stationAnalytics.getDirection(stationStore.getStation(stationId)),
-        pressure : stationAnalytics.getPressure(stationStore.getStation(stationId)),
-        feelsLike : stationAnalytics.getFeelsLike(stationStore.getStation(stationId)),
-        minTemp : stationAnalytics.getMin("temperature", stationStore.getStation(stationId)),
-        minWindSpeed : stationAnalytics.getMin("windSpeed", stationStore.getStation(stationId)),
-        minPressure : stationAnalytics.getMin("pressure", stationStore.getStation(stationId)),
-        maxTemp : stationAnalytics.getMax("temperature", stationStore.getStation(stationId)),
-        maxWindSpeed : stationAnalytics.getMax("windSpeed", stationStore.getStation(stationId)),
-        maxPressure : stationAnalytics.getMax("pressure", stationStore.getStation(stationId))
-      }
     };
+
+    // fill in the latest data
+    viewData.station["temperature"] = stationAnalytics.getTemperature(viewData.station);
+    viewData.station["fahrenheit"] = stationAnalytics.getFahrenheit(viewData.station);
+    viewData.station["weather"] = stationAnalytics.getWeather(viewData.station);
+    viewData.station["beaufort"] = stationAnalytics.getBeaufort(viewData.station);
+    viewData.station["direction"] = stationAnalytics.getDirection(viewData.station);
+    viewData.station["pressure"] = stationAnalytics.getPressure(viewData.station);
+    viewData.station["feelsLike"] = stationAnalytics.getFeelsLike(viewData.station);
+    viewData.station["minTemperature"] = stationAnalytics.getMin("temperature", viewData.station);
+    viewData.station["minWindSpeed"] = stationAnalytics.getMin("windSpeed", viewData.station);
+    viewData.station["minPressure"] = stationAnalytics.getMin("pressure", viewData.station);
+    viewData.station["maxTemperature"] = stationAnalytics.getMax("temperature", viewData.station);
+    viewData.station["maxWindSpeed"] = stationAnalytics.getMax("windSpeed", viewData.station);
+    viewData.station["maxPressure"] = stationAnalytics.getMax("pressure", viewData.station);
 
     response.render("station", viewData);
   },
 
-  deleteSong(request, response) {
+  deleteReading(request, response) {
     const stationId = request.params.id;
-    const songId = request.params.songid;
-    logger.debug(`Deleting Song ${songId} from station ${stationId}`);
-    stationStore.removeSong(stationId, songId);
+    const readingId = request.params.readingId;
+    logger.debug(`Deleting Reading ${readingId} from station ${stationId}`);
+    stationStore.removeReading(stationId, readingId);
     response.redirect("/station/" + stationId);
   },
 
-  addSong(request, response) {
+  addReading(request, response) {
     const stationId = request.params.id;
-    const station = stationStore.getstation(stationId);
-    const newSong = {
+    const station = stationStore.getStation(stationId);
+    const newReading = {
       id: uuid.v1(),
-      title: request.body.title,
-      artist: request.body.artist,
-      duration: Number(request.body.duration)
+      date: new Date().toLocaleString(),
+      code: parseInt(request.body.code),
+      temperature: request.body.temperature,
+      windSpeed: request.body.windSpeed,
+      windDirection: request.body.windDirection,
+      pressure: request.body.pressure
     };
-    logger.debug("New Song = ", newSong);
-    stationStore.addSong(stationId, newSong);
+    logger.debug("New Reading = ", newReading);
+    stationStore.addReading(stationId, newReading);
+    
     response.redirect("/station/" + stationId);
   }
 };

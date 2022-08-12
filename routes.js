@@ -17,10 +17,13 @@ router.post("/authenticate", accounts.authenticate);
 
 router.get("/", dashboard.index);
 router.get("/dashboard", dashboard.index);
+router.get("/dashboard/deletestation/:id", dashboard.deleteStation);
+router.post("/dashboard/addstation", dashboard.addStation);
+
 router.get("/about", about.index);
 
 router.get("/station/:id", station.index);
-// router.get("/station/:id/deletestation/:stationid", station.deleteStation);
-// router.post("/station/:id/addstation", station.addStation);
+router.get("/station/:id/deletereading/:readingId", station.deleteReading);
+router.post("/station/:id/addreading", station.addReading);
 
 module.exports = router;

@@ -3,9 +3,9 @@
     {
       "id": "01",
       "name": "Tramore",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0", 
-      "latitude": 52.1623500,
-      "longitude": -7.1524400,
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "latitude": 52.16235,
+      "longitude": -7.15244,
       "readings": [
         {
           "id": "02",
@@ -34,12 +34,28 @@
           "windDirection": 101,
           "date": "2021-06-25T07:20:42.138Z"
         }
-      ]
+      ],
+      "temperature": 8,
+      "fahrenheit": 46.4,
+      "weather": [
+        "Snow",
+        "snowflake"
+      ],
+      "beaufort": 0,
+      "direction": "East",
+      "pressure": 1005,
+      "feelsLike": 9.89,
+      "minTemperature": "Min: 0.5",
+      "minWindSpeed": "Min: 1",
+      "minPressure": "Min: 1002",
+      "maxTemperature": "Max: 8",
+      "maxWindSpeed": "Max: 3.5",
+      "maxPressure": "Max: 1005"
     },
     {
       "id": "05",
       "name": "Dunmore",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0", 
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "latitude": 52.1499994,
       "longitude": -6.9833294,
       "readings": [
@@ -61,7 +77,66 @@
           "windDirection": 102,
           "date": "2021-03-25T07:20:42.138Z"
         }
-      ]
+      ],
+      "temperature": 0.5,
+      "fahrenheit": 32.9,
+      "weather": [
+        "Partial Clouds",
+        "cloud sun"
+      ],
+      "beaufort": 1,
+      "direction": "East South East",
+      "pressure": 1000,
+      "feelsLike": -0.22,
+      "minTemperature": "Min: 0.5",
+      "minWindSpeed": "Min: 1",
+      "minPressure": "Min: 999",
+      "maxTemperature": "Max: 8",
+      "maxWindSpeed": "Max: 3.5",
+      "maxPressure": "Max: 1000"
+    },
+    {
+      "id": "59e737d0-1a4e-11ed-a747-9f2b2bc5e568",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Cork",
+      "longitude": "25.25",
+      "latitude": "52.52",
+      "readings": [
+        {
+          "id": "61bb0090-1a4e-11ed-a747-9f2b2bc5e568",
+          "date": "12/8/2022, 15:52:26",
+          "code": 700,
+          "temperature": "22",
+          "windSpeed": "22",
+          "windDirection": "22",
+          "pressure": "22"
+        },
+        {
+          "id": "65b42730-1a4e-11ed-a747-9f2b2bc5e568",
+          "date": "12/8/2022, 15:52:33",
+          "code": 800,
+          "temperature": "11",
+          "windSpeed": "11",
+          "windDirection": "11",
+          "pressure": "11"
+        }
+      ],
+      "weather": [
+        "Snow",
+        "snowflake"
+      ],
+      "temperature": "22",
+      "fahrenheit": 71.6,
+      "beaufort": 4,
+      "direction": "North North East",
+      "pressure": "22",
+      "feelsLike": 22.45,
+      "minTemperature": "Min: 22",
+      "minWindSpeed": "Min: 22",
+      "minPressure": "Min: 22",
+      "maxTemperature": "Max: 22",
+      "maxWindSpeed": "Max: 22",
+      "maxPressure": "Max: 22"
     }
   ]
 }
