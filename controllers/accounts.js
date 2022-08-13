@@ -6,6 +6,10 @@ const uuid = require("uuid");
 
 const accounts = {
   login(request, response) {
+    if (request.cookies.station) {
+      response.redirect("dashboard");
+    }
+
     const viewData = {
       title: "Login to the Service"
     };
@@ -19,7 +23,7 @@ const accounts = {
 
   signup(request, response) {
     const viewData = {
-      title: "Login to the Service"
+      title: "Sign up for the Service"
     };
     response.render("signup", viewData);
   },
