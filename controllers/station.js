@@ -27,6 +27,9 @@ const station = {
     viewData.station["maxTemperature"] = stationAnalytics.getMax("temperature", viewData.station);
     viewData.station["maxWindSpeed"] = stationAnalytics.getMax("windSpeed", viewData.station);
     viewData.station["maxPressure"] = stationAnalytics.getMax("pressure", viewData.station);
+    viewData.station["temperatureTrend"] = stationAnalytics.getTrend("temperature", viewData.station);
+    viewData.station["windTrend"] = stationAnalytics.getTrend("windSpeed", viewData.station);
+    viewData.station["pressureTrend"] = stationAnalytics.getTrend("pressure", viewData.station);
 
     response.render("station", viewData);
   },
@@ -46,10 +49,10 @@ const station = {
       id: uuid.v1(),
       date: new Date().toLocaleString(),
       code: parseInt(request.body.code),
-      temperature: request.body.temperature,
-      windSpeed: request.body.windSpeed,
-      windDirection: request.body.windDirection,
-      pressure: request.body.pressure
+      temperature: parseInt(request.body.temperature),
+      windSpeed: parseInt(request.body.windSpeed),
+      windDirection: parseInt(request.body.windDirection),
+      pressure: parseInt(request.body.pressure)
     };
     logger.debug("New Reading = ", newReading);
     stationStore.addReading(stationId, newReading);

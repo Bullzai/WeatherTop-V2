@@ -108,7 +108,7 @@ const stationAnalytics = {
       if (station.readings.length > 0) {
         windDirection = station.readings[station.readings.length - 1].windDirection;
       }
-      if (348.75 < windDirection && windDirection < 11.25) {
+      if (348.75 < windDirection || windDirection < 11.25) {
         direction = "North";
       } else if (11.25 < windDirection && windDirection < 33.75) {
         direction = "North North East";
@@ -222,6 +222,40 @@ const stationAnalytics = {
             break;
         }
         return "Max: " + maxValue;
+      }
+    },
+
+    getTrend(property, station) {
+      let trend = null;
+
+      if (station.readings.length > 2) {
+        let aSize = station.readings.length // array size
+        let sr = station.readings; // shorten the code/if statement
+
+        switch (property) {
+          case "temperature":
+            if (sr[aSize - 3].temperature > sr[aSize - 2].temperature && sr[aSize - 2].temperature > sr[aSize - 1].temperature) {
+              trend = "down";
+            } else if (sr[aSize - 3].temperature < sr[aSize - 2].temperature && sr[aSize - 2].temperature < sr[aSize - 1].temperature) {
+              trend = "up";
+            }
+            break;
+          case "windSpeed":
+            if (sr[aSize - 3].windSpeed > sr[aSize - 2].windSpeed && sr[aSize - 2].windSpeed > sr[aSize - 1].windSpeed) {
+              trend = "down";
+            } else if (sr[aSize - 3].windSpeed < sr[aSize - 2].windSpeed && sr[aSize - 2].windSpeed < sr[aSize - 1].windSpeed) {
+              trend = "up";
+            }
+            break;
+          case "pressure":
+            if (sr[aSize - 3].pressure > sr[aSize - 2].pressure && sr[aSize - 2].pressure > sr[aSize - 1].pressure) {
+              trend = "down";
+            } else if (sr[aSize - 3].pressure < sr[aSize - 2].pressure && sr[aSize - 2].pressure < sr[aSize - 1].pressure) {
+              trend = "up";
+            }
+            break;
+        }
+        return trend;
       }
     }
 };

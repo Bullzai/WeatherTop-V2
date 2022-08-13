@@ -50,7 +50,10 @@
       "minPressure": "Min: 1002",
       "maxTemperature": "Max: 8",
       "maxWindSpeed": "Max: 3.5",
-      "maxPressure": "Max: 1005"
+      "maxPressure": "Max: 1005",
+      "temperatureTrend": "up",
+      "windTrend": "down",
+      "pressureTrend": "up"
     },
     {
       "id": "05",
@@ -96,47 +99,56 @@
       "maxPressure": "Max: 1000"
     },
     {
-      "id": "59e737d0-1a4e-11ed-a747-9f2b2bc5e568",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "id": "a7554120-1af7-11ed-81d5-135617c1e733",
+      "userid": "ef9d2460-1a12-11ed-b395-9727604a7106",
       "name": "Cork",
-      "longitude": "25.25",
-      "latitude": "52.52",
+      "longitude": "51.115",
+      "latitude": "52.255",
       "readings": [
         {
-          "id": "61bb0090-1a4e-11ed-a747-9f2b2bc5e568",
-          "date": "12/8/2022, 15:52:26",
-          "code": 700,
-          "temperature": "22",
-          "windSpeed": "22",
-          "windDirection": "22",
-          "pressure": "22"
+          "id": "b0410990-1af7-11ed-81d5-135617c1e733",
+          "date": "13/8/2022, 12:04:23",
+          "code": 800,
+          "temperature": 2,
+          "windSpeed": 2,
+          "windDirection": 2,
+          "pressure": 100
         },
         {
-          "id": "65b42730-1a4e-11ed-a747-9f2b2bc5e568",
-          "date": "12/8/2022, 15:52:33",
-          "code": 800,
-          "temperature": "11",
-          "windSpeed": "11",
-          "windDirection": "11",
-          "pressure": "11"
+          "id": "bcebfce0-1af7-11ed-81d5-135617c1e733",
+          "date": "13/8/2022, 12:04:44",
+          "code": 500,
+          "temperature": 5,
+          "windSpeed": 5,
+          "windDirection": 45,
+          "pressure": 50
+        },
+        {
+          "id": "d3bfcc80-1af7-11ed-81d5-135617c1e733",
+          "date": "13/8/2022, 12:05:23",
+          "code": 600,
+          "temperature": 6,
+          "windSpeed": 6,
+          "windDirection": 90,
+          "pressure": 0
         }
       ],
       "weather": [
-        "Snow",
-        "snowflake"
+        "Heavy Showers",
+        "cloud showers heavy"
       ],
-      "temperature": "22",
-      "fahrenheit": 71.6,
-      "beaufort": 4,
-      "direction": "North North East",
-      "pressure": "22",
-      "feelsLike": 22.45,
-      "minTemperature": "Min: 22",
-      "minWindSpeed": "Min: 22",
-      "minPressure": "Min: 22",
-      "maxTemperature": "Max: 22",
-      "maxWindSpeed": "Max: 22",
-      "maxPressure": "Max: 22"
+      "temperature": 5,
+      "fahrenheit": 41,
+      "beaufort": 0,
+      "direction": "North East",
+      "pressure": 50,
+      "feelsLike": 4.08,
+      "minTemperature": "Min: 2",
+      "minWindSpeed": "Min: 2",
+      "minPressure": "Min: 50",
+      "maxTemperature": "Max: 5",
+      "maxWindSpeed": "Max: 5",
+      "maxPressure": "Max: 100"
     }
   ]
 }

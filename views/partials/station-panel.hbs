@@ -34,7 +34,7 @@
         </div>
         <div class="right floated center aligned column">
           <i class="teal temperature low huge icon"></i><br><br>
-          <i class="teal big arrow ${utils.StationUtil.trend('temperature', _station)} icon"></i>
+          <i class="teal big arrow {{temperatureTrend}} icon"></i>
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@
         </div>
         <div class="right floated center aligned column">
           <i class="olive wind huge icon"></i><br><br>
-          <i class="olive big arrow ${utils.StationUtil.trend('windSpeed', _station)} icon"></i>
+          <i class="olive big arrow {{windTrend}} icon"></i>
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@
         </div>
         <div class="right floated center aligned column">
           <i class="right teal huge sun outline loading icon"></i><br><br>
-          <i class="teal big arrow ${utils.StationUtil.trend('pressure', _station)} icon"></i></div>
+          <i class="teal big arrow {{pressureTrend}} icon"></i></div>
       </div>
     </div>
   </div>

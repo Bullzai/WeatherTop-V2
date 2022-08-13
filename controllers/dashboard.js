@@ -30,6 +30,9 @@ const dashboard = {
       viewData.stations[i]["maxTemperature"] = stationAnalytics.getMax("temperature", viewData.stations[i]);
       viewData.stations[i]["maxWindSpeed"] = stationAnalytics.getMax("windSpeed", viewData.stations[i]);
       viewData.stations[i]["maxPressure"] = stationAnalytics.getMax("pressure", viewData.stations[i]);
+      viewData.stations[i]["temperatureTrend"] = stationAnalytics.getTrend("temperature", viewData.stations[i]);
+      viewData.stations[i]["windTrend"] = stationAnalytics.getTrend("windSpeed", viewData.stations[i]);
+      viewData.stations[i]["pressureTrend"] = stationAnalytics.getTrend("pressure", viewData.stations[i]);
     }
 
     response.render("dashboard", viewData);
