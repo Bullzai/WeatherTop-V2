@@ -10,6 +10,13 @@ const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
     const loggedInUser = accounts.getCurrentUser(request);
+
+    // check if user is actually logged in, if not - clear his cookies and redirect back to login page
+    if (!loggedInUser) {
+      response.cookie("station", "");
+      response.redirect("/");
+    }
+
     const viewData = {
       title: "Stations Dashboard",
       stations: stationStore.getUserStations(loggedInUser.id),
@@ -35,6 +42,8 @@ const dashboard = {
       viewData.stations[i]["pressureTrend"] = stationAnalytics.getTrend("pressure", viewData.stations[i]);
     }
 
+    // sort the stations alphabetically, case insensitive
+    viewData.stations.sort((a, b) => a.name.localeCompare(b.name));
     response.render("dashboard", viewData);
   },
 
