@@ -3,6 +3,7 @@
 const userstore = require("../models/user-store");
 const logger = require("../utils/logger");
 const uuid = require("uuid");
+const userStore = require("../models/user-store");
 
 const accounts = {
   login(request, response) {
@@ -33,6 +34,7 @@ const accounts = {
     user.id = uuid.v1();
     userstore.addUser(user);
     logger.info(`registering ${user.email}`);
+    response.cookie("station", user.email);
     response.redirect("/");
   },
 
@@ -50,6 +52,35 @@ const accounts = {
   getCurrentUser(request) {
     const userEmail = request.cookies.station;
     return userstore.getUserByEmail(userEmail);
+  },
+
+  showProfile(request, response) {
+    const userEmail = request.cookies.station;
+    const viewData = userstore.getUserByEmail(userEmail);
+    response.render("profile", viewData);
+  },
+
+  editProfile(request, response) {
+    const userEmail = request.cookies.station;
+    const user = userstore.getUserByEmail(userEmail);
+
+    // check if the user has entered something in the fields
+    if (request.body.email) {
+      user.email = request.body.email;
+    }
+    if (request.body.password) {
+      user.password = request.body.password;
+    }
+    if (request.body.firstName) {
+      user.firstName = request.body.firstName;
+    }
+    if (request.body.lastName) {
+      user.lastName = request.body.lastName;
+    }
+
+    userStore.editUser();
+    response.cookie("station", user.email);
+    response.redirect("/profile");
   }
 };
 
