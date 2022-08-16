@@ -80,6 +80,15 @@ const station = {
       report.pressure = reading.pressure;
       report.windDirection = reading.wind_deg;
       station.weather[0] = reading.weather[0].description;
+
+      station.tempTrend = [];
+      station.trendLabels = [];
+      const trends = result.data.daily;
+      for (let i = 0; i < trends.length; i++) {
+        station.tempTrend.push(trends[i].temp.day);
+        const date = new Date(trends[i].dt * 1000);
+        station.trendLabels.push(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}` );
+      }
     }
 
     stationStore.addReading(stationId, report);

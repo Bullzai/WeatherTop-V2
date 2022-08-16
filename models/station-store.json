@@ -79,27 +79,53 @@
           "pressure": 1000,
           "windDirection": 102,
           "date": "2021-03-25T07:20:42.138Z"
+        },
+        {
+          "id": "804b2070-1d5b-11ed-a057-1324d68ef39b",
+          "date": "16/8/2022, 13:03:54",
+          "code": 800,
+          "temperature": 18.42,
+          "windSpeed": 6.69,
+          "pressure": 1011,
+          "windDirection": 350
         }
       ],
-      "temperature": 17.61,
-      "fahrenheit": 63.698,
+      "temperature": 0.5,
+      "fahrenheit": 32.9,
       "weather": [
-        "Thunder",
-        "bolt"
+        "scattered clouds",
+        "cloud sun"
       ],
-      "beaufort": 2,
-      "direction": "North North East",
-      "pressure": 1011,
-      "feelsLike": 17.8,
+      "beaufort": 1,
+      "direction": "East South East",
+      "pressure": 1000,
+      "feelsLike": -0.22,
       "minTemperature": "Min: 0.5",
       "minWindSpeed": "Min: 1",
       "minPressure": "Min: 999",
-      "maxTemperature": "Max: 17.61",
-      "maxWindSpeed": "Max: 9.26",
-      "maxPressure": "Max: 1011",
-      "temperatureTrend": null,
-      "windTrend": "up",
-      "pressureTrend": "up"
+      "maxTemperature": "Max: 8",
+      "maxWindSpeed": "Max: 3.5",
+      "maxPressure": "Max: 1000",
+      "tempTrend": [
+        18.42,
+        15.76,
+        20,
+        18.25,
+        19.71,
+        21.16,
+        21.29,
+        17.94
+      ],
+      "trendLabels": [
+        "16/7/2022",
+        "17/7/2022",
+        "18/7/2022",
+        "19/7/2022",
+        "20/7/2022",
+        "21/7/2022",
+        "22/7/2022",
+        "23/7/2022"
+      ]
     },
     {
       "id": "a7554120-1af7-11ed-81d5-135617c1e733",
