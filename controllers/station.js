@@ -45,7 +45,6 @@ const station = {
 
   addReading(request, response) {
     const stationId = request.params.id;
-    // const station = stationStore.getStation(stationId);
     const newReading = {
       id: uuid.v1(),
       date: new Date().toLocaleString(),
@@ -68,24 +67,23 @@ const station = {
     const lat = station.latitude;
     const apiKey = "fe9134d3c80f73370254f16336563cea";
     const oneCallRequest = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=${apiKey}`;
-    let report = {};
     const result = await axios.get(oneCallRequest);
+    let report = {};
+
     if (result.status == 200) {
       const reading = result.data.current;
-      report.code = reading.weather[0].id;
+      report.id = uuid.v1();
+      report.date = new Date().toLocaleString();
+      report.code = Math. round(reading.weather[0].id / 100) * 100;
       report.temperature = reading.temp;
       report.windSpeed = reading.wind_speed;
       report.pressure = reading.pressure;
       report.windDirection = reading.wind_deg;
+      station.weather[0] = reading.weather[0].description;
     }
-    console.log(report);
-    const viewData = {
-      title: "Weather Report",
-      reading: report
-    };
 
-    stationStore.addReading(stationId, newReading);
-    response.render("station", viewData);
+    stationStore.addReading(stationId, report);
+    response.redirect("/station/" + stationId);
   },
 };
 

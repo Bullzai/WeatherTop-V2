@@ -35,25 +35,25 @@
           "date": "2021-06-25T07:20:42.138Z"
         }
       ],
-      "temperature": 1,
-      "fahrenheit": 33.8,
+      "temperature": 8,
+      "fahrenheit": 46.4,
       "weather": [
-        "Clear",
-        "sun"
+        "Snow",
+        "snowflake"
       ],
       "beaufort": 0,
-      "direction": "North",
-      "pressure": 1,
-      "feelsLike": 13.74,
+      "direction": "East",
+      "pressure": 1005,
+      "feelsLike": 9.89,
       "minTemperature": "Min: 0.5",
-      "minWindSpeed": "Min: 0",
-      "minPressure": "Min: 1",
+      "minWindSpeed": "Min: 1",
+      "minPressure": "Min: 1002",
       "maxTemperature": "Max: 8",
       "maxWindSpeed": "Max: 3.5",
       "maxPressure": "Max: 1005",
-      "temperatureTrend": null,
+      "temperatureTrend": "up",
       "windTrend": "down",
-      "pressureTrend": null
+      "pressureTrend": "up"
     },
     {
       "id": "05",
@@ -81,22 +81,25 @@
           "date": "2021-03-25T07:20:42.138Z"
         }
       ],
-      "temperature": 0.5,
-      "fahrenheit": 32.9,
+      "temperature": 17.61,
+      "fahrenheit": 63.698,
       "weather": [
-        "Partial Clouds",
-        "cloud sun"
+        "Thunder",
+        "bolt"
       ],
-      "beaufort": 1,
-      "direction": "East South East",
-      "pressure": 1000,
-      "feelsLike": -0.22,
+      "beaufort": 2,
+      "direction": "North North East",
+      "pressure": 1011,
+      "feelsLike": 17.8,
       "minTemperature": "Min: 0.5",
       "minWindSpeed": "Min: 1",
       "minPressure": "Min: 999",
-      "maxTemperature": "Max: 8",
-      "maxWindSpeed": "Max: 3.5",
-      "maxPressure": "Max: 1000"
+      "maxTemperature": "Max: 17.61",
+      "maxWindSpeed": "Max: 9.26",
+      "maxPressure": "Max: 1011",
+      "temperatureTrend": null,
+      "windTrend": "up",
+      "pressureTrend": "up"
     },
     {
       "id": "a7554120-1af7-11ed-81d5-135617c1e733",
