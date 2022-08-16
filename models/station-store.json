@@ -60,7 +60,7 @@
       "name": "Dunmore",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "latitude": 52.1499994,
-      "longitude": -6.9833294,
+      "longitude": -6.9958649,
       "readings": [
         {
           "id": "06",
@@ -88,26 +88,35 @@
           "windSpeed": 6.69,
           "pressure": 1011,
           "windDirection": 350
+        },
+        {
+          "id": "ed7e2f60-1d5c-11ed-86c4-19f1af34b101",
+          "date": "16/8/2022, 13:14:07",
+          "code": 800,
+          "temperature": 18.23,
+          "windSpeed": 6.69,
+          "pressure": 1011,
+          "windDirection": 350
         }
       ],
-      "temperature": 0.5,
-      "fahrenheit": 32.9,
+      "temperature": 18.23,
+      "fahrenheit": 64.814,
       "weather": [
-        "scattered clouds",
-        "cloud sun"
+        "Thunder",
+        "bolt"
       ],
-      "beaufort": 1,
-      "direction": "East South East",
-      "pressure": 1000,
-      "feelsLike": -0.22,
+      "beaufort": 2,
+      "direction": "North",
+      "pressure": 1011,
+      "feelsLike": 18.84,
       "minTemperature": "Min: 0.5",
       "minWindSpeed": "Min: 1",
       "minPressure": "Min: 999",
-      "maxTemperature": "Max: 8",
-      "maxWindSpeed": "Max: 3.5",
-      "maxPressure": "Max: 1000",
+      "maxTemperature": "Max: 18.42",
+      "maxWindSpeed": "Max: 6.69",
+      "maxPressure": "Max: 1011",
       "tempTrend": [
-        18.42,
+        18.23,
         15.76,
         20,
         18.25,
@@ -125,7 +134,10 @@
         "21/7/2022",
         "22/7/2022",
         "23/7/2022"
-      ]
+      ],
+      "temperatureTrend": null,
+      "windTrend": null,
+      "pressureTrend": null
     },
     {
       "id": "a7554120-1af7-11ed-81d5-135617c1e733",
