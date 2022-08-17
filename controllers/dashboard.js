@@ -24,22 +24,22 @@ const dashboard = {
 
     // populate station objects with latest reading info from station-analytic utilty
     for (let i = 0; i < viewData.stations.length; i++) {
-      viewData.stations[i]["temperature"] = stationAnalytics.getTemperature(viewData.stations[i]);
+      viewData.stations[i]["latestTemp"] = stationAnalytics.getTemperature(viewData.stations[i]);
       viewData.stations[i]["fahrenheit"] = stationAnalytics.getFahrenheit(viewData.stations[i]);
       viewData.stations[i]["weather"] = stationAnalytics.getWeather(viewData.stations[i]);
       viewData.stations[i]["beaufort"] = stationAnalytics.getBeaufort(viewData.stations[i]);
-      viewData.stations[i]["direction"] = stationAnalytics.getDirection(viewData.stations[i]);
-      viewData.stations[i]["pressure"] = stationAnalytics.getPressure(viewData.stations[i]);
+      viewData.stations[i]["directionLabel"] = stationAnalytics.getDirection(viewData.stations[i]);
+      viewData.stations[i]["latestPressure"] = stationAnalytics.getPressure(viewData.stations[i]);
       viewData.stations[i]["feelsLike"] = stationAnalytics.getFeelsLike(viewData.stations[i]);
-      viewData.stations[i]["minTemperature"] = stationAnalytics.getMin("temperature", viewData.stations[i]);
-      viewData.stations[i]["minWindSpeed"] = stationAnalytics.getMin("windSpeed", viewData.stations[i]);
+      viewData.stations[i]["minTemp"] = stationAnalytics.getMin("temperature", viewData.stations[i]);
+      viewData.stations[i]["minWind"] = stationAnalytics.getMin("windSpeed", viewData.stations[i]);
       viewData.stations[i]["minPressure"] = stationAnalytics.getMin("pressure", viewData.stations[i]);
-      viewData.stations[i]["maxTemperature"] = stationAnalytics.getMax("temperature", viewData.stations[i]);
-      viewData.stations[i]["maxWindSpeed"] = stationAnalytics.getMax("windSpeed", viewData.stations[i]);
+      viewData.stations[i]["maxTemp"] = stationAnalytics.getMax("temperature", viewData.stations[i]);
+      viewData.stations[i]["maxWind"] = stationAnalytics.getMax("windSpeed", viewData.stations[i]);
       viewData.stations[i]["maxPressure"] = stationAnalytics.getMax("pressure", viewData.stations[i]);
-      viewData.stations[i]["temperatureTrend"] = stationAnalytics.getTrend("temperature", viewData.stations[i]);
-      viewData.stations[i]["windTrend"] = stationAnalytics.getTrend("windSpeed", viewData.stations[i]);
-      viewData.stations[i]["pressureTrend"] = stationAnalytics.getTrend("pressure", viewData.stations[i]);
+      viewData.stations[i]["tempIcon"] = stationAnalytics.getTrend("temperature", viewData.stations[i]);
+      viewData.stations[i]["windIcon"] = stationAnalytics.getTrend("windSpeed", viewData.stations[i]);
+      viewData.stations[i]["pressureIcon"] = stationAnalytics.getTrend("pressure", viewData.stations[i]);
     }
 
     // sort the stations alphabetically, case insensitive
@@ -53,19 +53,17 @@ const dashboard = {
       id: uuid.v1(),
       userid: loggedInUser.id,
       name: request.body.name,
-      longitude: request.body.longitude,
-      latitude: request.body.latitude,
+      longitude: parseFloat(request.body.longitude),
+      latitude: parseFloat(request.body.latitude),
       readings: [],
       weather: []
     };
-    logger.debug("Creating a new Sation", newStation);
     stationStore.addStation(newStation);
     response.redirect("/dashboard");
   },
 
   deleteStation(request, response) {
     const stationId = request.params.id;
-    logger.debug(`Deleting Station ${stationId}`);
     stationStore.removeStation(stationId);
     response.redirect("/dashboard");
   }

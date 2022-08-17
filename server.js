@@ -21,6 +21,15 @@ app.engine(
 );
 app.set("view engine", ".hbs");
 
+var hbs = exphbs.create({});
+
+// register new helper
+hbs.handlebars.registerHelper('floatFix', function(number) {
+  if (number != null) {
+    return number.toFixed(3).slice(0,-1);
+  }
+})
+
 const routes = require("./routes");
 app.use("/", routes);
 

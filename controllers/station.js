@@ -15,22 +15,22 @@ const station = {
     };
 
     // fill in the latest data
-    viewData.station["temperature"] = stationAnalytics.getTemperature(viewData.station);
+    viewData.station["latestTemp"] = stationAnalytics.getTemperature(viewData.station);
     viewData.station["fahrenheit"] = stationAnalytics.getFahrenheit(viewData.station);
     viewData.station["weather"] = stationAnalytics.getWeather(viewData.station);
     viewData.station["beaufort"] = stationAnalytics.getBeaufort(viewData.station);
-    viewData.station["direction"] = stationAnalytics.getDirection(viewData.station);
-    viewData.station["pressure"] = stationAnalytics.getPressure(viewData.station);
+    viewData.station["directionLabel"] = stationAnalytics.getDirection(viewData.station);
+    viewData.station["latestPressure"] = stationAnalytics.getPressure(viewData.station);
     viewData.station["feelsLike"] = stationAnalytics.getFeelsLike(viewData.station);
-    viewData.station["minTemperature"] = stationAnalytics.getMin("temperature", viewData.station);
-    viewData.station["minWindSpeed"] = stationAnalytics.getMin("windSpeed", viewData.station);
+    viewData.station["minTemp"] = stationAnalytics.getMin("temperature", viewData.station);
+    viewData.station["minWind"] = stationAnalytics.getMin("windSpeed", viewData.station);
     viewData.station["minPressure"] = stationAnalytics.getMin("pressure", viewData.station);
-    viewData.station["maxTemperature"] = stationAnalytics.getMax("temperature", viewData.station);
-    viewData.station["maxWindSpeed"] = stationAnalytics.getMax("windSpeed", viewData.station);
+    viewData.station["maxTemp"] = stationAnalytics.getMax("temperature", viewData.station);
+    viewData.station["maxWind"] = stationAnalytics.getMax("windSpeed", viewData.station);
     viewData.station["maxPressure"] = stationAnalytics.getMax("pressure", viewData.station);
-    viewData.station["temperatureTrend"] = stationAnalytics.getTrend("temperature", viewData.station);
-    viewData.station["windTrend"] = stationAnalytics.getTrend("windSpeed", viewData.station);
-    viewData.station["pressureTrend"] = stationAnalytics.getTrend("pressure", viewData.station);
+    viewData.station["tempIcon"] = stationAnalytics.getTrend("temperature", viewData.station);
+    viewData.station["windIcon"] = stationAnalytics.getTrend("windSpeed", viewData.station);
+    viewData.station["pressureIcon"] = stationAnalytics.getTrend("pressure", viewData.station);
 
     response.render("station", viewData);
   },
@@ -49,8 +49,8 @@ const station = {
       id: uuid.v1(),
       date: new Date().toLocaleString(),
       code: parseInt(request.body.code),
-      temperature: parseInt(request.body.temperature),
-      windSpeed: parseInt(request.body.windSpeed),
+      temperature: parseFloat(request.body.temperature),
+      windSpeed: parseFloat(request.body.windSpeed),
       windDirection: parseInt(request.body.windDirection),
       pressure: parseInt(request.body.pressure)
     };
@@ -70,7 +70,7 @@ const station = {
     const result = await axios.get(oneCallRequest);
     let report = {};
 
-    if (result.status == 200) {
+    if (result.status == 200) { //make sure we got a successful response
       const reading = result.data.current;
       report.id = uuid.v1();
       report.date = new Date().toLocaleString();

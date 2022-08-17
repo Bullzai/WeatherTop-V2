@@ -4,8 +4,8 @@
       <div class="ui equal width grid">
         <div class="left floated left aligned column">
           <h3>{{name}}</h3>
-          Lat: {{latitude}}<br>
-          Lng: {{longitude}}<br>
+          Lat: {{floatFix latitude}}<br>
+          Lng: {{floatFix longitude}}<br>
         </div>
         <div class="right floated center aligned column">
           <i class="teal marker huge icon"></i>
@@ -27,14 +27,14 @@
       <div class="ui equal width grid">
         <div class="left floated left aligned column">
           <h3>Temperature</h3>
-          {{temperature}} °C<br>
-          {{fahrenheit}} °F<br>
-          {{minTemperature}}<br>
-          {{maxTemperature}}
+          {{latestTemp}} °C<br>
+          {{floatFix fahrenheit}} °F<br>
+          {{minTemp}}<br>
+          {{maxTemp}}
         </div>
         <div class="right floated center aligned column">
           <i class="teal temperature low huge icon"></i><br><br>
-          <i class="teal big arrow {{temperatureTrend}} icon"></i>
+          <i class="teal big arrow {{tempIcon}} icon"></i>
         </div>
       </div>
     </div>
@@ -43,14 +43,14 @@
         <div class="left floated left aligned column">
           <h3>Wind</h3>
             {{beaufort}} bft<br>
-            {{direction}}<br>
+            {{directionLabel}}<br>
             Feels like: {{feelsLike}} °C<br>
-            {{minWindSpeed}}<br>
-            {{maxWindSpeed}}
+            {{minWind}}<br>
+            {{maxWind}}
         </div>
         <div class="right floated center aligned column">
           <i class="olive wind huge icon"></i><br><br>
-          <i class="olive big arrow {{windTrend}} icon"></i>
+          <i class="olive big arrow {{windIcon}} icon"></i>
         </div>
       </div>
     </div>
@@ -58,13 +58,13 @@
       <div class="ui equal width grid">
         <div class="left floated left aligned column">
           <h3>Pressure</h3>
-            {{pressure}} hPa<br>
+            {{latestPressure}} hPa<br>
             {{minPressure}}<br>
             {{maxPressure}}
         </div>
         <div class="right floated center aligned column">
           <i class="right teal huge sun outline loading icon"></i><br><br>
-          <i class="teal big arrow {{pressureTrend}} icon"></i></div>
+          <i class="teal big arrow {{pressureIcon}} icon"></i></div>
       </div>
     </div>
   </div>

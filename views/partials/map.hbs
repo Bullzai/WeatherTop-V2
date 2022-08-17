@@ -1,17 +1,60 @@
-<div id="map" style="height: 250px"></div>
+Left click on a marker to see the Station info.<br>
+Right click anywhere on map to add a new Station.
+<div id="map" style="height: 250px">asd</div>
 <script>
   var map = L.map('map').setView([53.11435508983019, -7.84195338376986], 6);
   var markerArray = [];
 
-  {{#each stations}}
-    markerArray.push(L.marker([{{latitude}}, {{longitude}}]).addTo(map));
-  {{/each}}
-
-  var group = L.featureGroup(markerArray).addTo(map);
-  map.fitBounds(group.getBounds()); // zoom map to show all markers (a.k.a. stations)
-  
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '© OpenStreetMap'
   }).addTo(map);
+
+  {{#each stations}}
+    //create markers for each station
+    var marker = L.marker([{{latitude}}, {{longitude}}]).on('click', markerOnClick).addTo(map);
+    marker.name = "{{name}}";
+    markerArray.push(marker);
+  {{/each}}
+
+  // zoom map to show all markers (a.k.a. stations)
+  var group = L.featureGroup(markerArray).addTo(map);
+  map.fitBounds(group.getBounds());
+  // on right click save/add a new station
+  map.on("contextmenu", function (event) {
+    var x;
+    var stationName = prompt("Please enter the new Stations' name","Hogwarts");
+    if (stationName != null) {
+      var { lat, lng } = event.latlng;
+      post('/dashboard/addstation', {name: stationName, latitude: lat, longitude: lng});
+    }
+  });
+
+  // function to create a new form & submit it
+  // setting values on the current 'add station' form and submitting it doesn't work
+  function post(path, params, method='post') {
+    const form = document.createElement('form');
+    form.method = method;
+    form.action = path;
+
+    for (const key in params) {
+      if (params.hasOwnProperty(key)) {
+        const hiddenField = document.createElement('input');
+        hiddenField.type = 'hidden';
+        hiddenField.name = key;
+        hiddenField.value = params[key];
+
+        form.appendChild(hiddenField);
+      }
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+  }
+
+  function markerOnClick(e) {
+    {{!-- var station = stationStore.getStation(stationId); --}}
+    alert("Station name: " + this.name);
+  }
 </script>
+
