@@ -154,17 +154,26 @@
           "windSpeed": 6.17,
           "pressure": 1011,
           "windDirection": 230
+        },
+        {
+          "id": "ade654c0-1ee9-11ed-9e27-f74d50b82f42",
+          "date": "18/8/2022, 12:34:11",
+          "code": 800,
+          "temperature": 20.86,
+          "windSpeed": 7.2,
+          "pressure": 1011,
+          "windDirection": 230
         }
       ],
       "weather": [
         "broken clouds",
-        ""
+        "bolt"
       ],
-      "beaufort": 0,
-      "directionLabel": "North",
-      "feelsLike": 0,
+      "beaufort": 2,
+      "directionLabel": "South West",
+      "feelsLike": 19.63,
       "tempTrend": [
-        18.94,
+        20.86,
         18.78,
         21.64,
         19.72,
@@ -182,6 +191,35 @@
         "23/8/2022",
         "24/8/2022",
         "25/8/2022"
+      ],
+      "latestTemp": 18.86,
+      "fahrenheit": 65.94800000000001,
+      "latestPressure": 1011,
+      "minTemp": "Min: 18.86",
+      "minWind": "Min: 6.17",
+      "minPressure": "Min: 1011",
+      "maxTemp": "Max: 18.86",
+      "maxWind": "Max: 6.17",
+      "maxPressure": "Max: 1011",
+      "windTrend": [
+        7.8,
+        6.65,
+        7.97,
+        4.43,
+        4.02,
+        3.61,
+        4.96,
+        3.22
+      ],
+      "pressureTrend": [
+        1011,
+        1016,
+        1015,
+        1014,
+        1010,
+        1011,
+        1014,
+        1022
       ]
     }
   ]

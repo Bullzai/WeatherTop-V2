@@ -8,20 +8,30 @@
     ],
     datasets: [
       {
-        name: "Temperature", type: "line",
+        name: "Temperature",
         values: [
           {{#each station.tempTrend}}
             {{this}},
           {{/each}}
-        ]
+        ],
+        chartType: 'bar'
+      },
+      {
+        name: "Wind Speed",
+        values: [
+          {{#each station.windTrend}}
+            {{this}},
+          {{/each}}
+        ],
+        chartType: 'line'
       }
     ]
   }
 
   const chart = new frappe.Chart("#chart", {
-    title: "Temperature Trend",
+    title: "Temperature & Wind Speed forecast",
     data: data,
-    type: 'line',
+    type: 'axis-mixed',
     height: 250,
   })
 </script>

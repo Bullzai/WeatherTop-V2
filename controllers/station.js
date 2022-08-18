@@ -83,10 +83,14 @@ const station = {
       station.weather[0] = reading.weather[0].description;
 
       station.tempTrend = [];
+      station.windTrend = [];
+      station.pressureTrend = [];
       station.trendLabels = [];
       const trends = result.data.daily;
       for (let i = 0; i < trends.length; i++) {
         station.tempTrend.push(trends[i].temp.day);
+        station.windTrend.push(trends[i].wind_speed);
+        station.pressureTrend.push(trends[i].pressure);
         const date = new Date(trends[i].dt * 1000);
         // JavaScript getMonth is 🤮 - it starts from 0.. why? Because JavaScript
         station.trendLabels.push(`${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`);
