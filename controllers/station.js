@@ -70,7 +70,8 @@ const station = {
     const result = await axios.get(oneCallRequest);
     let report = {};
 
-    if (result.status == 200) { //make sure we got a successful response
+    //make sure we get a successful response
+    if (result.status == 200) {
       const reading = result.data.current;
       report.id = uuid.v1();
       report.date = new Date().toLocaleString();
@@ -87,7 +88,8 @@ const station = {
       for (let i = 0; i < trends.length; i++) {
         station.tempTrend.push(trends[i].temp.day);
         const date = new Date(trends[i].dt * 1000);
-        station.trendLabels.push(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}` );
+        // JavaScript getMonth is 🤮 - it starts from 0.. why? Because JavaScript
+        station.trendLabels.push(`${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`);
       }
     }
 
