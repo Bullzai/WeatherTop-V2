@@ -18,8 +18,11 @@ Right click anywhere on map to add a new Station.
   {{/each}}
 
   // zoom map to show all markers (a.k.a. stations)
-  var group = L.featureGroup(markerArray).addTo(map);
-  map.fitBounds(group.getBounds());
+  if (markerArray.length !== 0) {
+    let group = L.featureGroup(markerArray).addTo(map);
+    map.fitBounds(group.getBounds());
+  }
+
   // on right click save/add a new station
   map.on("contextmenu", function (event) {
     var x;
@@ -52,6 +55,7 @@ Right click anywhere on map to add a new Station.
     form.submit();
   }
 
+  // function to show makrers'/stations' name on left click
   function markerOnClick(e) {
     {{!-- var station = stationStore.getStation(stationId); --}}
     alert("Station name: " + this.name);

@@ -27,10 +27,12 @@
       <div class="ui equal width grid">
         <div class="left floated left aligned column">
           <h3>Temperature</h3>
+          {{#if latestTemp}}
           {{latestTemp}} °C<br>
           {{floatFix fahrenheit}} °F<br>
           {{minTemp}}<br>
           {{maxTemp}}
+          {{/if}}
         </div>
         <div class="right floated center aligned column">
           <i class="teal temperature low huge icon"></i><br><br>
@@ -42,11 +44,13 @@
       <div class="ui equal width grid">
         <div class="left floated left aligned column">
           <h3>Wind</h3>
-            {{beaufort}} bft<br>
-            {{directionLabel}}<br>
-            Feels like: {{feelsLike}} °C<br>
-            {{minWind}}<br>
-            {{maxWind}}
+          {{#if latestTemp}}
+          {{beaufort}} bft<br>
+          {{directionLabel}}<br>
+          Feels like: {{feelsLike}} °C<br>
+          {{minWind}}<br>
+          {{maxWind}}
+          {{/if}}
         </div>
         <div class="right floated center aligned column">
           <i class="olive wind huge icon"></i><br><br>
@@ -58,9 +62,11 @@
       <div class="ui equal width grid">
         <div class="left floated left aligned column">
           <h3>Pressure</h3>
-            {{latestPressure}} hPa<br>
-            {{minPressure}}<br>
-            {{maxPressure}}
+          {{#if latestTemp}}
+          {{latestPressure}} hPa<br>
+          {{minPressure}}<br>
+          {{maxPressure}}
+          {{/if}}
         </div>
         <div class="right floated center aligned column">
           <i class="right teal huge sun outline loading icon"></i><br><br>

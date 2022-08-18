@@ -140,40 +140,64 @@
       ]
     },
     {
-      "id": "a7554120-1af7-11ed-81d5-135617c1e733",
+      "id": "8dc8c030-1ed3-11ed-9566-29e62573a2db",
       "userid": "ef9d2460-1a12-11ed-b395-9727604a7106",
       "name": "Cork",
-      "longitude": 51.115,
-      "latitude": 52.255,
+      "longitude": -8.470458984375002,
+      "latitude": 51.87331155882294,
       "readings": [
         {
-          "id": "b0410990-1af7-11ed-81d5-135617c1e733",
-          "date": "13/8/2022, 12:04:23",
+          "id": "981e9ff0-1ed3-11ed-9566-29e62573a2db",
+          "date": "18/8/2022, 09:56:05",
           "code": 800,
-          "temperature": 2,
-          "windSpeed": 2,
-          "windDirection": 2,
-          "pressure": 100
-        },
-        {
-          "id": "bcebfce0-1af7-11ed-81d5-135617c1e733",
-          "date": "13/8/2022, 12:04:44",
-          "code": 500,
-          "temperature": 5,
-          "windSpeed": 5,
-          "windDirection": 45,
-          "pressure": 50
-        },
-        {
-          "id": "4ab58140-1b0c-11ed-a651-9104dea865e8",
-          "date": "13/8/2022, 14:31:52",
-          "code": 100,
-          "temperature": 7,
-          "windSpeed": 7,
-          "windDirection": 7,
-          "pressure": 7
+          "temperature": 17.86,
+          "windSpeed": 5.66,
+          "pressure": 1011,
+          "windDirection": 210
         }
+      ],
+      "weather": [
+        "broken clouds",
+        ""
+      ],
+      "beaufort": 0,
+      "directionLabel": "North",
+      "feelsLike": 0,
+      "tempTrend": [
+        18.57,
+        18.78,
+        21.64,
+        19.72,
+        22.43,
+        15.75,
+        19.79,
+        19.14
+      ],
+      "trendLabels": [
+        "18/7/2022",
+        "19/7/2022",
+        "20/7/2022",
+        "21/7/2022",
+        "22/7/2022",
+        "23/7/2022",
+        "24/7/2022",
+        "25/7/2022"
       ]
+    },
+    {
+      "id": "936e3740-1ed3-11ed-9566-29e62573a2db",
+      "userid": "ef9d2460-1a12-11ed-b395-9727604a7106",
+      "name": "Yog",
+      "longitude": -7.818145751953126,
+      "latitude": 51.941579696522226,
+      "readings": [],
+      "weather": [
+        "",
+        ""
+      ],
+      "beaufort": 0,
+      "directionLabel": "North",
+      "feelsLike": 0
     }
   ]
 }
