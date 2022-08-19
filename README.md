@@ -1,4 +1,4 @@
-# Vidmantas Valskis WeatherTop web application
+# Vidmantas Valskis WeatherTop V2 JavaScipt edition web application
 
 Web Development II WeatherTop V2 assignment
 
