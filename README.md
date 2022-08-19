@@ -11,8 +11,7 @@ A Web companion application for modular weather station WeatherTop 1000, V2 Java
 
 ## Dependencies
 
-* Java 11
-* Play 1.6
+* NodeJS
 
 
 ## Running app on local machine
@@ -21,10 +20,7 @@ A Web companion application for modular weather station WeatherTop 1000, V2 Java
 ```
 const apiKey = "API_KEY"
 ```
-
-
-## Executing program
-
+Then:
 ```
 cd project-folder/
 npm install
@@ -69,6 +65,6 @@ npm start
 ## Acknowledgments
 
 Sources referred to during the development of the assignment:
-* [submbit post form](https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit)
+* [submit form](https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit)
 * [leaflet map events](https://leafletjs.com/reference.html#mouseevent)
 * [handlebars](https://handlebarsjs.com/api-reference/)
