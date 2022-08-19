@@ -1,11 +1,12 @@
 # Vidmantas Valskis WeatherTop web application
 
-A joint Web Development & Programming assigment.
+Web Development II WeatherTop V2 assignment
+
 
 
 ## Description
 
-A Web companion application for modular weather station WeatherTop 1000
+A Web companion application for modular weather station WeatherTop 1000, V2 JavaScript edition.
 
 
 ## Dependencies
@@ -16,28 +17,18 @@ A Web companion application for modular weather station WeatherTop 1000
 
 ## Running app on local machine
 
-* Edit file conf/application.conf and change from 
+* Open controllers/station.js and add your API key from openweathermap.org 
 ```
-application.mode=prod
-db=${catflower}
-```
-to 
-```
-application.mode=dev
-db.default=mem
-```
-* Or you can set Environment Variables on your PC:
-```
-key = catflower
-value = postgres://user:pwd@host/database
+const apiKey = "API_KEY"
 ```
 
 
 ## Executing program
 
 ```
-cd web-app/
-play run
+cd project-folder/
+npm install
+npm start
 ```
 
 
@@ -49,51 +40,30 @@ play run
 
 ## Version History
 
-* Weather Top - Release 3 v1.1
+* Weather Top JS - Release 4 v1.1
     * This version includes all features in the previous release with few changes:
-        * Adjusted front-end
-        * Created Util class and moved all methods into it from Station model class
-        * Added additional input requirements and checks
+        * Updated map functionality:
+            * Left click on marker to see stations info
+            * Right click on map to quickly create a new station.
+        * Added new pressure chart
+        * Combined temperature and wind speed charts into one.
+        * Code clean-up
+        
+* Weather Top JS - Release 4 v1.0
+    * This version includes all features in the previous release with few extra features:
+        * Auto generate reading from OpenWeaher using API
+        * Station Map view
+        * Graphical chart of temperature forecast
         * Code clean-up
 
-* Weather Top - Release 3 v1.0
-    * This version includes all features in the previous release, plus 5 new capabilities:
+* Weather Top JS - Release 3 v1.0
+    * Reworked app from Java with working features:
         * Trends
         * Date/Time stamp on each reading
         * All Stations Summary
         * Station/Reading delete support
         * Members can edit their personal details
-    * Fully functional app with all methods in station model class.
-
-* Weather Top - Release 2
-    * This version includes all features in the previous release, plus 4 new capabilities:
-        * User Accounts
-        * Location of Station
-        * Current Weather Icon
-        * Max/Min values
-
-* Weather Top - Release 1
-    * This version includes all features in baseline, with one additional piece of data in the reading for each station - Wind Direction
-    * For each station, the wind summary is expanded to include:
-        * Wind Compass
-        * Wind Chill
-    * The application has 2 additional features:
-        * Add Station
-        * Add Reading
-
-* Weather Top - Baseline
-    * This version includes all features in Starter and the dashboard presents, for each station, the Latest Weather. The latest weather is derived from the most recent (last) reading for the station and contains:
-        * Station Name
-        * Weather conditions
-        * Temp in both C & F
-        * Wind in Beaufort
-        * Pressure
-* Weather Top - Starter
-    * Initial Release
-    * The application launches and reads a YAML file (.yml) of readings for a small number of weather stations. Each reading consists of:
-        * Weather Code (number in range 100-800), integer
-        * Temp (C) decimal
-        * Wind Speed (kM/hr) decimal
+    * Fully functional app with all methods in station analytic utility.
 
 
 ## Acknowledgments
