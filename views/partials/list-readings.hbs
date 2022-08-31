@@ -1,44 +1,44 @@
 <table class="ui fixed table">
   <thead>
-  <tr>
-    <th>Date/Time</th>
-    <th>Code</th>
-    <th>Temp</th>
-    <th>Wind Speed</th>
-    <th>Pressure</th>
-  </tr>
+    <tr>
+      <th>Date/Time</th>
+      <th>Code</th>
+      <th>Temp</th>
+      <th>Wind Speed</th>
+      <th>Pressure</th>
+    </tr>
   </thead>
   <tbody>
-  {{#each station.readings}}
-  <tr>
-    <td>
-      {{date}}
-    </td>
-    <td>
-      {{code}}
-    </td>
-    <td>
-      {{temperature}}
-    </td>
-    <td>
-      {{windSpeed}}
-    </td>
-    <td>
-      {{pressure}}
-    </td>
-    <td>
-      <a href="/station/{{../station.id}}/deletereading/{{id}}">
-        <div class="ui animated fade button" tabindex="0">
-          <div class="visible content">
-            <i class="brown trash icon"></i>
+    {{#each station.readings}}
+    <tr>
+      <td>
+        {{date}}
+      </td>
+      <td>
+        {{code}}
+      </td>
+      <td>
+        {{temperature}}
+      </td>
+      <td>
+        {{windSpeed}}
+      </td>
+      <td>
+        {{pressure}}
+      </td>
+      <td>
+        <a href="/station/{{../station.id}}/deletereading/{{id}}">
+          <div class="ui animated fade button" tabindex="0">
+            <div class="visible content">
+              <i class="brown trash icon"></i>
+            </div>
+            <div class="hidden content">
+              Delete
+            </div>
           </div>
-          <div class="hidden content">
-            Delete
-          </div>
-        </div>
-      </a>
-    </td>
-  </tr>
-  {{/each}}
+        </a>
+      </td>
+    </tr>
+    {{/each}}
   </tbody>
 </table>

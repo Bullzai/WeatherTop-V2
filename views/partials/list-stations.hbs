@@ -1,24 +1,24 @@
 {{#each stations}}
 <section class="ui segment">
   {{> station-panel }}
-    <a href="/station/{{id}}">
+  <a href="/station/{{id}}">
     <div class="ui animated fade button" tabindex="0">
-        <div class="visible content">
+      <div class="visible content">
         <i class="teal folder open icon"></i>
-        </div>
-        <div class="hidden content">
+      </div>
+      <div class="hidden content">
         View
-        </div>
+      </div>
     </div>
-    </a>
-    <a href="/dashboard/deletestation/{{id}}">
+  </a>
+  <a href="/dashboard/deletestation/{{id}}">
     <div class="ui animated fade button" tabindex="0">
-        <div class="visible content">
+      <div class="visible content">
         <i class="brown trash icon"></i>
-        </div>
-        <div class="hidden content">
+      </div>
+      <div class="hidden content">
         Delete
-        </div>
+      </div>
     </div>
   </a>
 </section>

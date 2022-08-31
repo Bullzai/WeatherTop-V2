@@ -33,27 +33,76 @@
           "pressure": 1005,
           "windDirection": 101,
           "date": "2021-06-25T07:20:42.138Z"
+        },
+        {
+          "id": "840ff6d0-2973-11ed-af99-4ff0a5177df3",
+          "date": "31/8/2022, 22:26:03",
+          "code": 800,
+          "temperature": 14.85,
+          "windSpeed": 3.6,
+          "pressure": 1024,
+          "windDirection": 50
         }
       ],
-      "latestTemp": 8,
-      "fahrenheit": 46.4,
+      "latestTemp": 14.85,
+      "fahrenheit": 58.730000000000004,
       "weather": [
-        "Snow",
-        "snowflake"
+        "Thunder",
+        "bolt"
       ],
-      "beaufort": 0,
-      "directionLabel": "East",
-      "latestPressure": 1005,
-      "feelsLike": 9.89,
+      "beaufort": 1,
+      "directionLabel": "North East",
+      "latestPressure": 1024,
+      "feelsLike": 15.62,
       "minTemp": "Min: 0.5",
       "minWind": "Min: 1",
       "minPressure": "Min: 1002",
-      "maxTemp": "Max: 8",
-      "maxWind": "Max: 3.5",
-      "maxPressure": "Max: 1005",
+      "maxTemp": "Max: 14.85",
+      "maxWind": "Max: 3.6",
+      "maxPressure": "Max: 1024",
       "tempIcon": "up",
-      "windIcon": "down",
-      "pressureIcon": "up"
+      "windIcon": null,
+      "pressureIcon": "up",
+      "tempTrend": [
+        18.35,
+        18.95,
+        18.67,
+        14.18,
+        15.44,
+        16.7,
+        16.61,
+        16.61
+      ],
+      "windTrend": [
+        7.26,
+        6.23,
+        4.99,
+        12.06,
+        9.77,
+        11,
+        9.52,
+        5.94
+      ],
+      "pressureTrend": [
+        1026,
+        1021,
+        1013,
+        1000,
+        1007,
+        1004,
+        1000,
+        1003
+      ],
+      "trendLabels": [
+        "31/8/2022",
+        "1/9/2022",
+        "2/9/2022",
+        "3/9/2022",
+        "4/9/2022",
+        "5/9/2022",
+        "6/9/2022",
+        "7/9/2022"
+      ]
     },
     {
       "id": "05",
@@ -90,53 +139,73 @@
           "windDirection": 350
         },
         {
-          "id": "0b99f910-1e3a-11ed-9251-3502caeb671e",
-          "date": "17/8/2022, 15:36:56",
+          "id": "bc1df090-2973-11ed-af99-4ff0a5177df3",
+          "date": "31/8/2022, 22:27:37",
           "code": 800,
-          "temperature": 20.27,
-          "windSpeed": 3.6,
-          "pressure": 1017,
-          "windDirection": 360
+          "temperature": 15.47,
+          "windSpeed": 6.01,
+          "pressure": 1024,
+          "windDirection": 27
         }
       ],
-      "latestTemp": 20.27,
-      "fahrenheit": 68.486,
+      "latestTemp": 15.47,
+      "fahrenheit": 59.846000000000004,
       "weather": [
         "Thunder",
         "bolt"
       ],
-      "beaufort": 1,
-      "directionLabel": "North",
-      "latestPressure": 1017,
-      "feelsLike": 21.63,
+      "beaufort": 2,
+      "directionLabel": "North North East",
+      "latestPressure": 1024,
+      "feelsLike": 15.76,
       "minTemp": "Min: 0.5",
       "minWind": "Min: 1",
       "minPressure": "Min: 999",
-      "maxTemp": "Max: 20.27",
+      "maxTemp": "Max: 18.42",
       "maxWind": "Max: 6.69",
-      "maxPressure": "Max: 1017",
-      "tempIcon": "up",
+      "maxPressure": "Max: 1024",
+      "tempIcon": null,
       "windIcon": null,
       "pressureIcon": "up",
       "tempTrend": [
-        18.26,
-        18.23,
-        17.64,
-        19.26,
-        17.68,
-        20.62,
-        17.78,
-        18.75
+        18.09,
+        18.65,
+        18.25,
+        14.63,
+        15.22,
+        16.9,
+        16.67,
+        16.42
       ],
       "trendLabels": [
-        "17/7/2022",
-        "18/7/2022",
-        "19/7/2022",
-        "20/7/2022",
-        "21/7/2022",
-        "22/7/2022",
-        "23/7/2022",
-        "24/7/2022"
+        "31/8/2022",
+        "1/9/2022",
+        "2/9/2022",
+        "3/9/2022",
+        "4/9/2022",
+        "5/9/2022",
+        "6/9/2022",
+        "7/9/2022"
+      ],
+      "windTrend": [
+        8.08,
+        6.88,
+        5.05,
+        12.79,
+        9.83,
+        11.71,
+        9.67,
+        6.15
+      ],
+      "pressureTrend": [
+        1026,
+        1021,
+        1013,
+        1000,
+        1007,
+        1004,
+        1000,
+        1003
       ]
     },
     {

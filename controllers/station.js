@@ -56,7 +56,7 @@ const station = {
     };
     logger.debug("New Reading = ", newReading);
     stationStore.addReading(stationId, newReading);
-    
+
     response.redirect("/station/" + stationId);
   },
 
@@ -75,7 +75,7 @@ const station = {
       const reading = result.data.current;
       report.id = uuid.v1();
       report.date = new Date().toLocaleString();
-      report.code = Math. round(reading.weather[0].id / 100) * 100;
+      report.code = Math.round(reading.weather[0].id / 100) * 100;
       report.temperature = reading.temp;
       report.windSpeed = reading.wind_speed;
       report.pressure = reading.pressure;

@@ -21,7 +21,8 @@
   const pressureChart = new frappe.Chart("#pressureChart", {
     title: "Pressure Trend",
     data: pressureData,
-    type: 'bar',
+    type: 'line',
     height: 180,
+    y_axis_exp_based_on_range: true,
   })
 </script>
