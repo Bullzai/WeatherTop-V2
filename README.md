@@ -1,6 +1,6 @@
 # Vidmantas Valskis WeatherTop V2 JavaScipt edition web application
 
-Web Development II WeatherTop V2 assignment
+WeatherTop V2 JavaScript edition
 
 
 
@@ -31,7 +31,6 @@ npm start
 ## Authors
 
 * Name : Vidmantas Valskis
-* Student Number: 20099690
 
 
 ## Version History
